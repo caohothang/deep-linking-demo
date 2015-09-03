@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+  <title>Intent linking demo</title>
+  <style>@media screen and (max-device-width:480px){body{-webkit-text-size-adjust:none}}</style>
+</head>
+<body>
+  <h1>Intent linking demo</h1>
+
+  <p>Option 1: Direct link</p>
+  <p>
+    <!-- See https://developer.chrome.com/multidevice/android/intents on why this link is the way it is -->
+    <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=https%3A%2F%2Fzxing.appspot.com%2F;end">
+    Take a QR code
+    </a>
+  </p>
+
+  <p>Option 2: Opens a new page, then redirects</p>
+  <p><a href="/zxing.html">Zebra Crossing</a></p>
+
+  <p>Option 3: iOS style zxing://scan/?</p>
+  <!-- check https://github.com/zxing/zxing/blob/5a1b6b41d88b3fa265b68d3ef033ed553c93ad5f/android/AndroidManifest.xml 
+       around line 92 for the corresponding AndroidManifest.xml 
+       Attention: the host part is important, it won't work with "zxing://somethingelse"
+  -->
+  <p><a href="zxing://scan/">Zebra Crossing</a></p>
+
+  <p>Option 4: like 2, but using the zxing:// scheme</p>
+  <p><a href="/zxing2.html">Zebra Crossing</a></p>
+</body>
+</html>

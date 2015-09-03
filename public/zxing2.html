@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+  <title>ZXing launcher</title>
+  <style>@media screen and (max-device-width:480px){body{-webkit-text-size-adjust:none}}</style>
+ 
+  <script>
+  window.onload = function() {
+    window.location = "intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=https%3A%2F%2Fzxing.appspot.com%2F;end";
+    setTimeout(function() {window.location = 'https://zxing.appspot.com';}, 1000);
+  }
+  </script>
+</head>
+<body>
+ 
+  <!-- button to Download App for new app users -->
+  <form action="https://play.google.com/store/apps/details?id=com.google.zxing.client.android" target="_blank">
+    <input type="submit" value="Download" />
+  </form>
+ 
+  <!-- button to Open App to specific screen for existing app users -->
+  <button type="button" onclick="window.location='intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=https%3A%2F%2Fzxing.appspot.com%2F;end'">
+    Open App
+  </button>
+
+  <p>
+    <a href="https://zxing.appspot.com/">Zebra Crossing</a>
+  </p>
+ 
+</body>
+</html>
